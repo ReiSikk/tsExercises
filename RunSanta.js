@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Santa_1 = require("./Santa");
+var Sled_1 = require("./Sled");
+var Bag_1 = require("./Bag");
+var BagType_1 = require("./BagType");
+var Present_1 = require("./Present");
+var PresentType_1 = require("./PresentType");
+//months in Date() are 0-indexed
+var santa1 = new Santa_1.Santa("Klaus", new Date(600, 0, 1));
+var sled = new Sled_1.Sled(santa1);
+var bag1 = new Bag_1.Bag(10, BagType_1.BagType.Canvas);
+var present1 = new Present_1.Present("Lego", 8, PresentType_1.PresentType.Hard);
+var present2 = new Present_1.Present("Socks", 3, PresentType_1.PresentType.Soft);
+bag1.addPresent(present1);
+bag1.addPresent(present2);
+sled.addBag(bag1);
+sled.addPresent(present2);
+sled.print();
+bag1.print();
